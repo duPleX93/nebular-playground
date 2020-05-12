@@ -1,0 +1,15 @@
+<nb-card>
+    <nb-card-header><h1 class="card-title">Purchase Type</h1></nb-card-header>
+    <nb-card-body>
+        <div class="chart-wrapper">
+            <canvas baseChart
+                    [data]="pieChartData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType"
+                    [options]="pieChartOptions"
+                    [colors]="pieChartColors"
+                    [legend]="pieChartLegend">
+            </canvas>
+        </div>
+    </nb-card-body>
+</nb-card>

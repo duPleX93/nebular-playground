@@ -1,0 +1,28 @@
+
+<nb-layout>
+
+    <nb-layout-header fixed>
+        <a href="#" (click)="toggle()" id="menu-toggler"><nb-icon icon="menu-arrow-outline"></nb-icon></a>
+        <span id="divider">|</span>
+        <img src="https://recash.app/assets/images/landing-logo.png" width="200">
+    </nb-layout-header>
+
+
+
+    <nb-sidebar subheader>
+        <app-menu></app-menu>
+    </nb-sidebar>
+
+
+
+    <nb-layout-column>
+        <router-outlet></router-outlet>
+    </nb-layout-column>
+
+
+
+    <nb-layout-footer>
+        <app-footer></app-footer>
+    </nb-layout-footer>
+
+</nb-layout>

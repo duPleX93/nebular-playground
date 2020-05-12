@@ -1,0 +1,36 @@
+<nb-card>
+    <nb-card-body>
+
+        <table [nbTreeGrid]="data" equalColumnsWidth>
+
+            <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+            <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+
+            <ng-container nbTreeGridColumnDef="id">
+                <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>ID</th>
+                <td nbTreeGridCell *nbTreeGridCellDef="let row">
+                    {{row.data.id}}
+                </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="name" [hideOn]="600">
+                <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Name</th>
+                <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.name}}</td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="walletStatus" [hideOn]="1000">
+                <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Wallet Status</th>
+            <td nbTreeGridCell
+                *nbTreeGridCellDef="let row"
+                [ngStyle]="{'color': row.data.walletStatus === 'Active' ? 'green' : 'red'}">{{row.data.walletStatus}}
+            </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="featured" [showOn]="1200">
+                <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Featured</th>
+                <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.featured || '-'}}</td>
+            </ng-container>
+        </table>
+
+    </nb-card-body>
+</nb-card>

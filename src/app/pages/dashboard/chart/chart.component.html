@@ -1,0 +1,16 @@
+<nb-card>
+    <nb-card-header><h1 class="card-title">Wallet (2020)</h1></nb-card-header>
+    <nb-card-body>
+        <div class="chart-wrapper">
+        <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                [plugins]="lineChartPlugins">
+        </canvas>
+        </div>
+    </nb-card-body>
+</nb-card>
